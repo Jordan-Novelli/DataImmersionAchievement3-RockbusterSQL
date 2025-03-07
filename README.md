@@ -1,2 +1,2 @@
 # SQL-Code
-Code used in SQL
+Example of SQL codes used to explore and maniuplate fictional data.
