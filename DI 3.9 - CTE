@@ -1,0 +1,36 @@
+* Finding the average amount paid by top 5 customer using CTE.
+WITH avg_amount_cte (customer_id, first_name, last_name, amount) AS
+  (SELECT A.customer_id, A.first_name, A.last_name, AVG(B.amount)
+  FROM customer A
+  LEFT JOIN payment B ON A.customer_id = B.customer_id
+  GROUP BY A.customer_id, A.first_name, A.last_name
+  ORDER BY AVG(B.amount) DESC
+  LIMIT 5)
+SELECT customer_id, first_name, last_name,
+  AVG(amount) AS average_paid
+FROM avg_amount_cte
+GROUP BY 1, 2, 3
+ORDER BY average_paid DESC
+
+* Finding out how many of the top 5 customer idtentified are based within each country.
+WITH top_5_customer_country (first_name, last_name, country, amount) AS
+  (SELECT 
+    AVG (p.amount) AS total_amount,
+    c.first_name,
+    c.last_name
+    co.country
+  FROM 
+    customer C
+  INNER JOIN payment p ON c.customer_id = p.customer_id
+  INNER JOIN addres a ON c.address_id = a.address_id
+  INNER JOIN city ci ON a.city_id = ci.city_id
+  IHNNER JOIN country co ON ci.country_id = co.country_id
+  GROUP BY
+    c.customer_id, c.first_name, c.last_name, co.country
+  ORDER BY
+    total_amount DESC
+  LIMIT 5)
+SELECT first_name, last_name, country, amount
+FROM top_5_customer_country
+GROUP BY 1, 2, 3, 4
+ORDER BY amount DESC
