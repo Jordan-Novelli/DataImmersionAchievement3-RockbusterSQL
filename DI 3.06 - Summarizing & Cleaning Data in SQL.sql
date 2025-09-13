@@ -31,13 +31,15 @@ SELECT  MIN(rental_rate) AS Min_Rent,
 		COUNT(replacement_cost) AS Count_Replacement_Cost,
 		COUNT(*) AS Count_rows
 FROM film;
---ANSWER: 0.99 | 9.99 |	4.99 | 29.99 | 2.9800000000000000 |	19.9840000000000000 | 1000 | 1000 |	1000
+--ANSWER: min_rent | min_cost | max_rent | max_cost | avg_rent           | avg_cost             | count_rent_values | count_replacement_cost | count_rows
+		-- 0.99    |  9.99    |	4.99     | 29.99    | 2.9800000000000000 | 19.9840000000000000  |        1000       |            1000        |	1000
 
 -- CUSTOMER TABLE
 SELECT MODE() WITHIN GROUP (ORDER BY email)
 	AS modal_value
 FROM customer;
---ANSWER: 1
+--ANSWER: modal_value
+--       "aaron.selby@sakilacustomer.org"
 
 SELECT email,
 	COUNT(*)
@@ -45,3 +47,4 @@ FROM customer
 GROUP BY email
 ORDER BY COUNT(*)
 --ANSWER: Total rows: 599 (there are only single instances of emails.)
+
