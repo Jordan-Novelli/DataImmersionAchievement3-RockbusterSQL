@@ -8,4 +8,4 @@ SELECT
 SELECT
 -- ANSWER: 
 
-_This script was left blank as these were questioned presented before learning how to operate SQL_
+**This script was left blank as these were questioned presented before learning how to operate SQL**
