@@ -7,3 +7,5 @@ SELECT
 -- What language are the majority of movies in the collection?
 SELECT
 -- ANSWER: 
+
+_This script was left blank as these were questioned presented before learning how to operate SQL_
