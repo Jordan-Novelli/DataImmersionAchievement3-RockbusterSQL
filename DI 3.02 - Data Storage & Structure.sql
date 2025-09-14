@@ -29,17 +29,17 @@ FROM actor A
 GROUP BY A.actor_id, A.first_name, A.last_name
 ORDER BY most_revenue DESC
 LIMIT 10;
---ANSWER: first_name | last_name | most_revenue
-			  -- Gina	      Degeneres  	3129.17
-			  -- Matthew    Carrey	    2543.78
-			  -- Mary       Keitel      2426.92
-			  -- Scarlett   Damon	      2403.81
-			  -- Walter     Torn	      2403.18
-			  -- Henry      Berry       2392.36
-			  -- Christian  Akroyd	    2378.97
-			  -- Angela     Witherspoon	2357.11
-			  -- Cameron    Zekkweger	  2322.94
-			  -- Wodoy      Hoffman	    2315.92
+--ANSWER: first_name        | last_name   | most_revenue
+			  -- Gina	     Degeneres  	3129.17
+			  -- Matthew     Carrey	        2543.78
+			  -- Mary        Keitel         2426.92
+			  -- Scarlett    Damon	        2403.81
+			  -- Walter      Torn	        2403.18
+			  -- Henry       Berry          2392.36
+			  -- Christian   Akroyd	        2378.97
+			  -- Angela      Witherspoon	2357.11
+			  -- Cameron     Zekkweger	    2322.94
+			  -- Wodoy       Hoffman	    2315.92
 
 -- What language are the majority of movies in the collection?
 SELECT A.name AS majority_language,
@@ -51,3 +51,4 @@ ORDER BY film_count DESC
 LIMIT 1;
 -- ANSWER: majority_language | film_count
         -- English            1000
+
